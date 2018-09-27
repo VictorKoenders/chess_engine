@@ -1,9 +1,12 @@
 extern crate csv;
+#[macro_use]
 extern crate failure;
 extern crate image;
 extern crate shared;
 #[macro_use]
 extern crate lazy_static;
+
+mod algebraic_notation;
 
 use image::{ImageBuffer, ImageDecoder, Rgb, Rgba};
 use shared::enum_primitive::FromPrimitive;
@@ -39,17 +42,20 @@ fn main() {
             .expect("Cannot generate image");
 
         for (index, m) in moves.split(' ').enumerate() {
-            print!("{:?}: ", index + 1);
-            if let Err(e) = boardstate.make_move(m) {
+            // println!("{:?}: {:?} {}", index + 1, boardstate.current_player, m);
+            let _notation = algebraic_notation::Notation::parse(m).expect("Could not parse");
+            /*notation
+                .apply(&mut boardstate)
+                .expect("Could not apply notation");
+            /*if let Err(e) = boardstate.make_move(m) {
                 println!("{:?}", e);
                 break;
-            }
-
+            }*/
             generate_image(
-                &boardstate,
-                &format!("board_states/{}/{}.png", game_id, index + 1),
+            &boardstate,
+            &format!("board_states/{}/{}.png", game_id, index + 1),
             )
-            .expect("Cannot generate image");
+            .expect("Cannot generate image");*/
         }
         println!("Done generating game {:?}", game_id);
     }

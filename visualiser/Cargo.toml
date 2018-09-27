@@ -1,0 +1,12 @@
+[package]
+authors = ["Victor Koenders <victor.koenders@gmail.com>"]
+edition = "2018"
+name = "visualiser"
+version = "0.1.0"
+
+[dependencies]
+csv = "1.0.2"
+image = "0.20.0"
+shared = { path = "../shared" }
+failure = "0.1.2"
+lazy_static = "1.1.0"

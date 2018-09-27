@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "evaluator",
+    "shared",
+    "visualiser",
+]

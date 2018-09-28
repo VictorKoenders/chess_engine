@@ -1,0 +1,10 @@
+[package]
+authors = ["Victor Koenders <victor.koenders@gmail.com>"]
+edition = "2018"
+name = "t"
+version = "0.1.0"
+
+[dependencies]
+pgn-reader = "0.10.0"
+shakmaty = "0.11.2"
+

@@ -3,4 +3,5 @@ members = [
     "evaluator",
     "shared",
     "visualiser",
+    "t",
 ]
